@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Your Name</title>
+
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal academic homepage for Your Name.">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+
+  <body>
+    <table class="page"><tbody>
+      <tr>
+        <td class="page-cell">
+
+          <table class="section"><tbody>
+            <tr>
+              <td class="header">
+                <p class="name">Your Name <span class="zh">Optional Chinese Name</span></p>
+                <p class="email">your.email@example.com</p>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table class="section intro"><tbody>
+            <tr>
+              <td class="bio">
+                <p>
+                  TODO: Write a short bio here. Mention your current role, affiliation, advisor or team, and the main topics you work on.
+                </p>
+                <p>
+                  TODO: Add previous education, work experience, research interests, or other background. Keep this section concise.
+                </p>
+                <p>
+                  <a href="#">Google Scholar</a> &nbsp;/&nbsp;
+                  <a href="#">GitHub</a> &nbsp;/&nbsp;
+                  <a href="#">LinkedIn</a> &nbsp;/&nbsp;
+                  <a href="#">CV</a>
+                </p>
+              </td>
+              <td class="photo-cell">
+                <a href="images/profile.svg">
+                  <img id="profile-photo" class="profile-photo" alt="profile photo" src="images/profile.svg">
+                </a>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table class="section news"><tbody>
+            <tr>
+              <td>
+                <h2>News</h2>
+                <p><span class="date">2026-06</span> TODO: Add a recent update, award, paper, internship, or project launch.</p>
+                <p><span class="date">2026-05</span> TODO: Add another update.</p>
+                <p><span class="date">2026-04</span> TODO: Add another update.</p>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table class="section"><tbody>
+            <tr>
+              <td>
+                <h2>Publications</h2>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table class="publications"><tbody>
+
+            <tr class="highlight">
+              <td class="thumb-cell">
+                <div class="thumb-placeholder">Project Image</div>
+              </td>
+              <td class="pub">
+                <a href="#">
+                  <span class="papertitle">TODO: Paper or Project Title</span>
+                </a>
+                <br>
+                <strong>Your Name</strong>, Coauthor One, Coauthor Two
+                <br>
+                <em>Venue or preprint</em>, Year
+                <br>
+                <a href="#">project page</a>
+                /
+                <a href="#">paper</a>
+                /
+                <a href="#">code</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="thumb-cell">
+                <div class="thumb-placeholder">Project Image</div>
+              </td>
+              <td class="pub">
+                <a href="#">
+                  <span class="papertitle">TODO: Another Paper or Project Title</span>
+                </a>
+                <br>
+                Your Name, Coauthor One, Coauthor Two
+                <br>
+                <em>Venue or preprint</em>, Year
+                <br>
+                <a href="#">project page</a>
+                /
+                <a href="#">paper</a>
+              </td>
+            </tr>
+
+          </tbody></table>
+
+          <table class="section footer"><tbody>
+            <tr>
+              <td>
+                <p>
+                  Website template adapted from <a href="https://github.com/jonbarron/website">Jon Barron</a>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+
+    <script type="text/javascript">
+      (function () {
+        var img = document.getElementById('profile-photo');
+        if (!img) return;
+        var angle = 0;
+        img.addEventListener('mouseenter', function () {
+          angle += (Math.random() < 0.5 ? 180 : -180);
+          img.style.transform = 'rotate(' + angle + 'deg)';
+        });
+      })();
+    </script>
+  </body>
+</html>
