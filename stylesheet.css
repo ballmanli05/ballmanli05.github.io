@@ -230,6 +230,10 @@ tr.highlight td:last-child {
   box-sizing: border-box;
 }
 
+.empty-thumb {
+  background: transparent;
+}
+
 .footer p {
   text-align: right;
   font-size: small;
