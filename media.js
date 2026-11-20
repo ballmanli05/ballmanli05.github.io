@@ -5,10 +5,12 @@
   if (!dialog || typeof dialog.showModal !== 'function') return;
 
   var content = dialog.querySelector('.media-content');
+  var stage = dialog.querySelector('.media-stage');
   var closeButton = dialog.querySelector('.media-close');
   var error = dialog.querySelector('.media-error');
   var opener = null;
   var backdropPressed = false;
+  var enteredFullscreen = false;
 
   document.querySelectorAll('[data-media]').forEach(function (link) {
     link.setAttribute('aria-haspopup', 'dialog');
@@ -21,6 +23,7 @@
       document.getElementById('media-title').textContent = link.dataset.title;
 
       var isVideo = link.dataset.media === 'video';
+      dialog.classList.toggle('video-dialog', isVideo);
       var media = document.createElement(isVideo ? 'video' : 'img');
       if (isVideo) {
         media.controls = true;
@@ -43,8 +46,12 @@
       // Assign the source only after a deliberate click, never during page load.
       media.src = link.href;
       if (isVideo) {
+        // Keep the close control in fullscreen; unsupported browsers use the viewport-sized dialog.
+        if (stage.requestFullscreen) {
+          stage.requestFullscreen().catch(function () {});
+        }
         media.play().catch(function () {
-          // Native controls remain available when the browser blocks autoplay.
+          // Native controls remain available when another playback gesture is required.
         });
       }
     });
@@ -70,8 +77,20 @@
       video.removeAttribute('src');
       video.load();
     }
+    enteredFullscreen = false;
+    if (document.fullscreenElement === stage) {
+      document.exitFullscreen().catch(function () {});
+    }
     content.replaceChildren();
     document.documentElement.classList.remove('media-open');
     if (opener) opener.focus({ preventScroll: true });
+  });
+  document.addEventListener('fullscreenchange', function () {
+    if (document.fullscreenElement === stage) {
+      enteredFullscreen = true;
+    } else if (enteredFullscreen && !document.fullscreenElement) {
+      enteredFullscreen = false;
+      if (dialog.open) dialog.close();
+    }
   });
 })();

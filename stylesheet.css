@@ -284,27 +284,25 @@ tr.highlight td:last-child {
 }
 
 .video-cell {
-  width: 156px;
-  padding: 12px 12px 12px 16px;
+  width: 180px;
+  padding: 16px;
   vertical-align: middle;
 }
 
 .video-preview {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  width: 156px;
+  position: relative;
+  display: block;
+  width: 180px;
   max-width: 100%;
+  aspect-ratio: 16 / 9;
   margin-left: auto;
 }
 
 .video-thumbnail {
   position: relative;
   display: block;
-  flex: none;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   overflow: hidden;
   border-radius: 4px;
   background: #fff;
@@ -331,19 +329,15 @@ tr.highlight td:last-child {
   box-shadow: 0 1px 6px #0005;
 }
 
-.video-label {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
-  width: 100%;
-  font-size: 14px;
-  font-weight: 600;
-}
-
 .video-duration {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
   display: block;
-  color: var(--muted-text);
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: #000b;
+  color: #fff;
   font-size: 12px;
   font-weight: 400;
 }
@@ -428,6 +422,44 @@ tr.highlight td:last-child {
 
 .media-error { margin: 8px 0 0; font-size: 14px; }
 
+.media-dialog.video-dialog {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: #000;
+  color: #fff;
+}
+
+.video-dialog .media-stage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  padding-top: max(12px, env(safe-area-inset-top));
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  background: #000;
+}
+
+.video-dialog .media-toolbar { flex: 0 0 auto; }
+
+.video-dialog .media-content {
+  flex: 1;
+  min-height: 0;
+}
+
+.video-dialog .media-content video {
+  height: 100%;
+  max-height: 100%;
+}
+
+.video-dialog .media-error { color: #fff; }
+
 @media (max-width: 720px) {
   .email {
     flex-direction: column;
@@ -479,7 +511,7 @@ tr.highlight td:last-child {
 
   .video-cell {
     box-sizing: border-box;
-    padding: 0 12px 12px;
+    padding: 4px 16px 16px;
   }
 
   tr.highlight td:first-child {
