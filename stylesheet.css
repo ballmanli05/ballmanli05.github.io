@@ -189,6 +189,8 @@ h2 {
 
 .news .date {
   color: #333333;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  font-variant-numeric: tabular-nums;
   font-weight: 700;
   white-space: nowrap;
 }
