@@ -182,14 +182,13 @@ h2 {
 
 .news-item {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
   column-gap: 18px;
   align-items: baseline;
 }
 
 .news .date {
   color: #333333;
-  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
   font-variant-numeric: tabular-nums;
   font-weight: 700;
   white-space: nowrap;
