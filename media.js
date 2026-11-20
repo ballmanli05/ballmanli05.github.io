@@ -29,7 +29,11 @@
         media.poster = link.dataset.poster;
         media.setAttribute('aria-label', link.dataset.title + ' video');
       } else {
-        media.alt = link.querySelector('img').alt;
+        var sourceImage = link.querySelector('img');
+        media.alt = sourceImage.alt;
+        if (sourceImage.classList.contains('figure-padded')) {
+          media.classList.add('figure-padded');
+        }
       }
       media.addEventListener('error', function () { error.hidden = false; });
       content.replaceChildren(media);
