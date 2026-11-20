@@ -99,13 +99,29 @@ h2 {
 }
 
 .email {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 20px;
   text-align: center;
   color: var(--muted-text);
   font-family: var(--font-sans);
   font-size: 17px;
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   margin: 8px 0 0;
+}
+
+.email a {
+  font: inherit;
+  color: inherit;
+  overflow-wrap: anywhere;
+}
+
+.email a:hover,
+.email a:focus-visible {
+  color: var(--link-color);
+  text-decoration: underline;
 }
 
 .intro td {
