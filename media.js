@@ -29,7 +29,6 @@
         media.controls = true;
         media.playsInline = true;
         media.preload = 'metadata';
-        media.poster = link.dataset.poster;
         media.setAttribute('aria-label', link.dataset.title + ' video');
       } else {
         var sourceImage = link.querySelector('img');
