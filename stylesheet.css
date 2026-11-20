@@ -198,6 +198,7 @@ h2 {
 }
 
 .publications {
+  table-layout: fixed;
   width: 100%;
   border: 0;
   border-spacing: 0 12px;
@@ -276,20 +277,27 @@ tr.highlight td:last-child {
   font-size: small;
 }
 
+.video-cell {
+  width: 156px;
+  padding: 12px 12px 12px 16px;
+  vertical-align: middle;
+}
+
 .video-preview {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  width: fit-content;
+  gap: 6px;
+  width: 156px;
   max-width: 100%;
-  margin-top: 10px;
+  margin-left: auto;
 }
 
 .video-thumbnail {
   position: relative;
   display: block;
-  flex: 0 0 120px;
-  width: 120px;
+  flex: none;
+  width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 4px;
@@ -318,6 +326,11 @@ tr.highlight td:last-child {
 }
 
 .video-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
   font-size: 14px;
   font-weight: 600;
 }
@@ -444,6 +457,11 @@ tr.highlight td:last-child {
   .pub {
     box-sizing: border-box;
     padding: 4px 12px 12px;
+  }
+
+  .video-cell {
+    box-sizing: border-box;
+    padding: 0 12px 12px;
   }
 
   tr.highlight td:first-child {
