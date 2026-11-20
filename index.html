@@ -40,7 +40,7 @@
                 </p>
               </td>
               <td class="photo-cell">
-                <a class="profile-frame" href="images/profile.JPG">
+                <a class="profile-frame" href="images/profile.JPG" data-media="image" data-title="Yisu Li">
                   <img id="profile-photo" class="profile-photo" alt="profile photo" src="images/profile.JPG">
                 </a>
               </td>
@@ -69,7 +69,7 @@
 
             <tr class="highlight">
               <td class="thumb-cell">
-                <a href="images/lexp-overview.png">
+                <a href="images/lexp-overview.png" data-media="image" data-title="LEXP">
                   <img class="thumb" src="images/lexp-overview.png" width="2044" height="1352" alt="LEXP: context-space adaptation and real-world manipulation results" loading="lazy">
                 </a>
               </td>
@@ -85,12 +85,19 @@
                 <a href="https://hatty-z.github.io/LearnFromExperience/">project page</a>
                 /
                 <a href="https://arxiv.org/abs/2610.41320">arXiv</a>
+                <a class="video-preview" href="videos/lexp-overview.mp4" data-media="video" data-title="LEXP" data-poster="images/lexp-video-poster.png" aria-label="Watch Video: LEXP">
+                  <span class="video-thumbnail">
+                    <img src="images/lexp-video-poster.png" width="480" height="270" alt="" loading="lazy">
+                    <span class="video-play"><img src="images/icons/play.svg" width="20" height="20" alt=""></span>
+                  </span>
+                  <span class="video-label">Watch Video<span class="video-duration">5:59</span></span>
+                </a>
               </td>
             </tr>
 
             <tr class="highlight">
               <td class="thumb-cell">
-                <a href="images/halo-overview.png">
+                <a href="images/halo-overview.png" data-media="image" data-title="HALO">
                   <img class="thumb" src="images/halo-overview.png" width="2025" height="776" alt="HALO: memory retrieval architecture for visuomotor policies" loading="lazy">
                 </a>
               </td>
@@ -106,6 +113,13 @@
                 <a href="https://robin-lab.cs.utexas.edu/HALO/">project page</a>
                 /
                 <a href="https://roboticsconference.org/program/papers/10/">paper page</a>
+                <a class="video-preview" href="videos/halo-demo.mp4" data-media="video" data-title="HALO" data-poster="images/halo-video-poster.png" aria-label="Watch Video: HALO">
+                  <span class="video-thumbnail">
+                    <img src="images/halo-video-poster.png" width="2720" height="1532" alt="" loading="lazy">
+                    <span class="video-play"><img src="images/icons/play.svg" width="20" height="20" alt=""></span>
+                  </span>
+                  <span class="video-label">Watch Video<span class="video-duration">0:49</span></span>
+                </a>
               </td>
             </tr>
 
@@ -124,6 +138,17 @@
       </tr>
     </tbody></table>
 
+    <dialog id="media-dialog" class="media-dialog" aria-labelledby="media-title">
+      <div class="media-toolbar">
+        <h2 id="media-title"></h2>
+        <button class="media-close" type="button" aria-label="Close" title="Close" autofocus>
+          <img src="images/icons/x.svg" width="24" height="24" alt="">
+        </button>
+      </div>
+      <div class="media-content"></div>
+      <p class="media-error" role="alert" hidden>Unable to load this media. <a class="media-fallback">Open original file</a></p>
+    </dialog>
+    <script src="media.js" defer></script>
     <script type="text/javascript">
       (function () {
         var img = document.getElementById('profile-photo');
